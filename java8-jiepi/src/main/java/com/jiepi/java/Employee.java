@@ -9,6 +9,18 @@ public class Employee {
 
     private  String sex;
 
+    public Employee() {
+    }
+
+    public Employee(String name) {
+        this.name = name;
+    }
+
+    public Employee(String name, String sex) {
+        this.name = name;
+        this.sex = sex;
+    }
+
     public Employee(int age, String name, String sex) {
         this.age = age;
         this.name = name;
