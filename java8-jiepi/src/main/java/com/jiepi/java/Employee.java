@@ -1,6 +1,8 @@
 package com.jiepi.java;
 
 
+import java.util.Objects;
+
 public class Employee {
 
     private int  age;
@@ -25,6 +27,22 @@ public class Employee {
         this.age = age;
         this.name = name;
         this.sex = sex;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return age == employee.age &&
+                Objects.equals(name, employee.name) &&
+                Objects.equals(sex, employee.sex);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(age, name, sex);
     }
 
     public int getAge() {
